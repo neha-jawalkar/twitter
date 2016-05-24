@@ -1,0 +1,37 @@
+ STATUSES_COUNT  FRIENDS_COUNT    LISTED_COUNT    USER_FAVORITES  
+ Min.   :   12   Min.   :   20   Min.   :  0.00   Min.   :     0  
+ 1st Qu.: 4016   1st Qu.:  211   1st Qu.:  1.00   1st Qu.:   338  
+ Median :10738   Median :  398   Median :  3.00   Median :  2008  
+ Mean   :20248   Mean   : 1511   Mean   : 20.08   Mean   :  6131  
+ 3rd Qu.:28617   3rd Qu.:  972   3rd Qu.: 13.50   3rd Qu.:  6334  
+ Max.   :94779   Max.   :51129   Max.   :706.00   Max.   :144737  
+ DESCRIPTION_LEN     HAS_URL        HAS_LOCATION       REPLIES      
+ Min.   :  0.00   Min.   :0.0000   Min.   :0.0000   Min.   :   0.0  
+ 1st Qu.: 31.00   1st Qu.:0.0000   1st Qu.:0.0000   1st Qu.:  63.5  
+ Median : 68.00   Median :0.0000   Median :1.0000   Median : 361.0  
+ Mean   : 71.64   Mean   :0.2904   Mean   :0.6502   Mean   : 553.4  
+ 3rd Qu.:112.00   3rd Qu.:1.0000   3rd Qu.:1.0000   3rd Qu.: 847.0  
+ Max.   :160.00   Max.   :1.0000   Max.   :1.0000   Max.   :2629.0  
+    MENTIONS      RETWEETS_OF_USER_TWEETS RETWEETS_BY_USER
+ Min.   :   0.0   Min.   :     0.0        Min.   :   0    
+ 1st Qu.: 134.5   1st Qu.:    55.5        1st Qu.: 320    
+ Median : 488.0   Median :   206.0        Median : 932    
+ Mean   : 790.9   Mean   :  2440.0        Mean   :1199    
+ 3rd Qu.:1187.0   3rd Qu.:   621.5        3rd Qu.:1924    
+ Max.   :9342.0   Max.   :273504.0        Max.   :3245    
+ FAVORITE_COUNT_FOR_USER    HASHTAGS      BROADCAST_COMMS      QUOTES       
+ Min.   :     0.0        Min.   :   0.0   Min.   :   0.0   Min.   :   0.00  
+ 1st Qu.:   108.5        1st Qu.:   9.0   1st Qu.: 260.5   1st Qu.:   0.00  
+ Median :   475.0        Median :  50.0   Median : 808.0   Median :  13.00  
+ Mean   :  2977.5        Mean   : 278.7   Mean   : 963.3   Mean   :  79.56  
+ 3rd Qu.:  1221.5        3rd Qu.: 161.0   3rd Qu.:1430.0   3rd Qu.:  93.00  
+ Max.   :461529.0        Max.   :4756.0   Max.   :3248.0   Max.   :1887.00  
+      URLS        TWEETS_EXAMINED    USER_AGE       FOLLOWERS_COUNT
+ Min.   :   0.0   Min.   :  11    Min.   :  30.41   Min.   :  101  
+ 1st Qu.:  23.5   1st Qu.:3032    1st Qu.: 453.87   1st Qu.:  217  
+ Median :  92.0   Median :3193    Median : 963.62   Median :  465  
+ Mean   : 330.8   Mean   :2760    Mean   :1099.79   Mean   : 2027  
+ 3rd Qu.: 285.5   3rd Qu.:3217    3rd Qu.:1609.25   3rd Qu.: 1137  
+ Max.   :3646.0   Max.   :3248    Max.   :3080.69   Max.   :60691  
+null device 
+          1 

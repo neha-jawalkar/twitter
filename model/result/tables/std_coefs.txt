@@ -1,0 +1,16 @@
+         STATUSES_COUNT           FRIENDS_COUNT            LISTED_COUNT 
+             0.13012856              0.54880353              0.16443195 
+         USER_FAVORITES         DESCRIPTION_LEN                 HAS_URL 
+            -0.05385749             -0.04930549              0.03498884 
+           HAS_LOCATION                 REPLIES                MENTIONS 
+             0.04807875             -0.11739727             -0.02723654 
+RETWEETS_OF_USER_TWEETS        RETWEETS_BY_USER FAVORITE_COUNT_FOR_USER 
+             0.32728913             -0.02153875              0.20903105 
+               HASHTAGS         BROADCAST_COMMS                  QUOTES 
+            -0.08590504             -0.12881337             -0.03277847 
+                   URLS         TWEETS_EXAMINED                USER_AGE 
+             0.05173140             -0.06114003              0.02763881 
+null device 
+          1 
+null device 
+          1 
