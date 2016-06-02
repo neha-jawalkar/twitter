@@ -1,0 +1,26 @@
+
+Call:
+svm(formula = FOLLOWERS_COUNT ~ ., data = X, cross = 10)
+
+
+Parameters:
+   SVM-Type:  eps-regression 
+ SVM-Kernel:  radial 
+       cost:  1 
+      gamma:  0.05555556 
+    epsilon:  0.1 
+
+
+Number of Support Vectors:  248
+
+
+
+10-fold cross-validation on training data:
+
+Total Mean Squared Error: 0.5785601 
+Squared Correlation Coefficient: 0.6558375 
+Mean Squared Errors:
+ 0.5990705 0.3217203 0.3093786 1.183237 0.3714909 0.3008911 0.6030574 0.6375111 0.6819279 0.7667387 
+
+
+

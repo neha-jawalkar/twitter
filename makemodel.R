@@ -1,5 +1,5 @@
 library(MASS)
-library(plsdepot)
+library(e1071)
 
 INPUT_FILE_PREFIX <- './data/processed/user_data'
 X <- read.csv(paste(INPUT_FILE_PREFIX,'1.csv',sep='_'))
@@ -25,6 +25,7 @@ cols <- dim(X)[2]
 
 X <- X[,c(1:4,6:cols,5)]
 
+
 write.table(X,file='./model/metrics/data/data.csv',sep=',',row.names=FALSE)
 sink('./model/metrics/data/data_summary.txt')
 summary(X)
@@ -41,18 +42,15 @@ pdf(file='./model/metrics/correlation/FOLLOWERS_COUNT_vs_everything_else.pdf')
 	}
 dev.off()
 
-X <- log(X + 1)
+X <- log(X+1)
 
-model <- plsreg1(X[, 1:(cols-1)], X[, cols, drop = FALSE], comps = 4)
-
-sink('./model/result/tables/std_coefs.txt')
-	model$std.coefs
-sink('./model/result/tables/reg_coefs.txt')
-	model$reg.coefs
+sink('./model/result/parameters.txt')
+summary(model <- svm(FOLLOWERS_COUNT ~ .,data=X,cross=10))
 sink()
 
-X$PREDICTED <- model$y.pred
-X <- exp(X) - 1
+X <- exp(X)-1
+
+X$PREDICTED <- exp(predict(model,data=X,type='response'))-1
 
 pdf(file='./model/result/plots/ACTUAL_vs_PREDICTED.pdf')
 	plot(X$FOLLOWERS_COUNT, X$PREDICTED,log='xy',xlab='FOLLOWERS_COUNT',ylab='PREDICTED_FOLLOWERS_COUNT')
@@ -61,6 +59,8 @@ dev.off()
 
 
 diff_from_pred <- abs(X$FOLLOWERS_COUNT - X$PREDICTED)
+
+plot(diff_from_pred,log='y')
 
 perc_diff_from_pred <- (diff_from_pred/X$FOLLOWERS_COUNT)*100
 
