@@ -63,12 +63,12 @@ The data is filtered based on the following critera:
 
 After filtering the data it was found that none of the remaining users were verified, this column from hence dropped from the data.
 
-The data was modeled using support vector regression (the e1071 library)
+The data was modeled using support vector regression (the e1071 library) with 10-fold cross-validation
 
-The standardized and regression coefficients can be found in model/result/tables/std_coefs.txt and model/result/tables/reg_coefs.txt 
+Model parameters can be found in model/result/tables/parameters.txt, and the corresponding graph can be found in model/results/plots/parameters.pdf
 
 The graph of actual vs predicted follower counts can be found in model/result/plots/ACTUAL_vs_PREDICTED.pdf
 
 Tabulated errors (FOLLOWERS_COUNT, PREDICTED, ABS_DIFF_FROM_PRED and PERC_DIFF_FROM_PRED) can be found in model/result/tables/errors.csv
 
-The average percentage error in perdiction (53.2%) can be found in model/result/tables/eval.txt
+The average percentage error in perdiction (30.19%) can be found in model/result/tables/eval.txt

@@ -42,11 +42,27 @@ pdf(file='./model/metrics/correlation/FOLLOWERS_COUNT_vs_everything_else.pdf')
 	}
 dev.off()
 
-X <- log(X+1)
 
-sink('./model/result/parameters.txt')
-summary(model <- svm(FOLLOWERS_COUNT ~ .,data=X,cross=10))
+error_func <- function(true, predicted)
+{
+	true = exp(true)
+	predicted = exp(predicted)
+	abs_diff = abs(predicted - true)
+	perc_diff = abs_diff/true*100
+	return(mean(perc_diff))
+}
+
+
+X <- log(X+1)
+tune_control <- tune.control(sampling='cross',cross=10,error.fun=error_func)
+tuned_parameters <- tune(svm,FOLLOWERS_COUNT ~ .,data=X, ranges = list(epsilon = seq(0,1,0.05), cost = 2^(0:2)),tunecontrol=tune_control)
+sink('./model/result/tables/parameters.txt')
+	print(tuned_parameters$best.parameters)
 sink()
+pdf(file='./model/result/plots/parameters.pdf')
+	plot(tuned_parameters)
+dev.off()
+model <- svm(FOLLOWERS_COUNT ~ ., data=X,epsilon=tuned_parameters$best.parameters[c('epsilon')],cost=tuned_parameters$best.parameters[c('cost')])
 
 X <- exp(X)-1
 
@@ -60,8 +76,6 @@ dev.off()
 
 diff_from_pred <- abs(X$FOLLOWERS_COUNT - X$PREDICTED)
 
-plot(diff_from_pred,log='y')
-
 perc_diff_from_pred <- (diff_from_pred/X$FOLLOWERS_COUNT)*100
 
 X$ABS_DIFF_PRED <- diff_from_pred
@@ -69,6 +83,7 @@ X$ABS_DIFF_PRED <- diff_from_pred
 X$PERC_DIFF_PRED <- perc_diff_from_pred
 
 pdf(file='./model/result/plots/error_graphs.pdf')
+	plot(diff_from_pred,log='y')
 	plot(X$FOLLOWERS_COUNT,X$ABS_DIFF_PRED,log='xy',xlab='FOLLOWERS_COUNT',ylab='ABSOLUTE_DIFFERENCE_IN_PREDICTION')
 	abline(rlm(X$FOLLOWERS_COUNT ~ X$ABS_DIFF_PRED),col='blue',untf=TRUE)
 	plot(X$FOLLOWERS_COUNT,X$PERC_DIFF_PRED,log='xy',xlab='FOLLOWERS_COUNT',ylab='PERCENTAGE_DIFFERENCE_IN_PREDICTION')
@@ -77,10 +92,9 @@ dev.off()
 
 write.table(X[,c('FOLLOWERS_COUNT','PREDICTED','ABS_DIFF_PRED','PERC_DIFF_PRED')],file='./model/result/tables/errors.csv',sep=',',row.names=FALSE)
 
-sink()
-
 avg_pred_perc_difference <- mean(perc_diff_from_pred)
 
-cat('\nAvg perc difference for Predicted=', toString(avg_pred_perc_difference),file='./model/result/tables/eval.txt')
+avg_pred_perc_difference
 
+cat('\nAvg perc difference for Predicted=', toString(avg_pred_perc_difference),file='./model/result/tables/eval.txt')
 

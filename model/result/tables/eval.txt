@@ -1,2 +1,2 @@
 
-Avg perc difference for Predicted= 30.2006583560363
+Avg perc difference for Predicted= 30.1950671386304

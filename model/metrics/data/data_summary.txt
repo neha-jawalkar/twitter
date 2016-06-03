@@ -26,16 +26,19 @@
  Mean   :  2959          Mean   : 276.8   Mean   : 963.9   Mean   :  81.25  
  3rd Qu.:  1207          3rd Qu.: 161.0   3rd Qu.:1424.0   3rd Qu.:  94.00  
  Max.   :461529          Max.   :4756.0   Max.   :3248.0   Max.   :1887.00  
-      URLS        TWEETS_EXAMINED    USER_AGE      FOLLOWERS_COUNT
- Min.   :   0.0   Min.   :  11    Min.   :  32.9   Min.   :  101  
- 1st Qu.:  25.0   1st Qu.:3023    1st Qu.: 440.3   1st Qu.:  217  
- Median :  95.0   Median :3193    Median : 971.9   Median :  453  
- Mean   : 333.3   Mean   :2755    Mean   :1101.9   Mean   : 2015  
- 3rd Qu.: 288.0   3rd Qu.:3217    3rd Qu.:1615.7   3rd Qu.: 1134  
- Max.   :3646.0   Max.   :3248    Max.   :3089.8   Max.   :60691  
+      URLS        TWEETS_EXAMINED    USER_AGE       FOLLOWERS_COUNT
+ Min.   :   0.0   Min.   :  11    Min.   :  33.49   Min.   :  101  
+ 1st Qu.:  25.0   1st Qu.:3023    1st Qu.: 440.91   1st Qu.:  217  
+ Median :  95.0   Median :3193    Median : 972.51   Median :  453  
+ Mean   : 333.3   Mean   :2755    Mean   :1102.47   Mean   : 2015  
+ 3rd Qu.: 288.0   3rd Qu.:3217    3rd Qu.:1616.25   3rd Qu.: 1134  
+ Max.   :3646.0   Max.   :3248    Max.   :3090.43   Max.   :60691  
 null device 
           1 
 null device 
           1 
-pdf 
-  2 
+null device 
+          1 
+null device 
+          1 
+[1] 30.19507
