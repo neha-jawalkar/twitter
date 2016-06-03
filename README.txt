@@ -38,7 +38,7 @@ Uses the stored user timeline to extract the following additional information:
 
 makemodel.R
 ------------
-Uses a log-log linear model to predict FOLLOWERS_COUNT.
+Uses a log-log svm model to predict FOLLOWERS_COUNT.
 
 
 
